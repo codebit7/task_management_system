@@ -1,0 +1,22 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "preact": "^10.25.4",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.2.0",
+    "recharts": "^2.15.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.1",
+    "vite": "^6.1.0"
+  }
+}
