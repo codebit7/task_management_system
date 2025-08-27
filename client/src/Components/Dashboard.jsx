@@ -3,6 +3,7 @@ import TaskCompletionChart from './TaskCompletionChart';
 import { myContext } from './UserContext';
 import { useNavigate } from 'react-router-dom';
 import profile from './../assets/profile.png'
+import "../Styles/Dashboard.css";
 
 const Dashboard = ({ tasks}) => {
 

@@ -4,6 +4,7 @@ import {calculateDaysAgo } from '../Utils/calculateDays'
 import { useNavigate } from 'react-router-dom';
 import { myContext } from './UserContext';
 import { showToast } from './TaskDashboard';
+import "../Styles/Tasks.css";
 
 
 const BASE_URL = 'http://localhost:3000';
@@ -121,7 +122,19 @@ const AddNewTask = ({ setIsOpen, setTasks, tasks, buttonName, id }) => {
 
   return (
     <div className="task-form-container">
-       <IoClose className="close-icon" onClick={() => setIsOpen(false)} />
+       <IoClose className="close-icon" onClick={() =>{
+            setIsOpen(false)
+            setNewTask({
+              user: currentUser.user._id,
+              title: '',
+              description: '',
+              priority: 'Low',
+              date: '',
+              taskCompleted: 'No',
+              status: 'In Progress'
+            });
+
+       }} />
 
       <div className='form'>
          

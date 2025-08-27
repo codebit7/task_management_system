@@ -6,6 +6,7 @@ import { SiGoogletasks } from "react-icons/si";
 import {calculateDaysAgo } from '../Utils/calculateDays'
 import { myContext } from './UserContext';
 import { showToast } from './TaskDashboard';
+import "../Styles/Tasks.css";
 
 
 const BASE_URL = 'http://localhost:3000';

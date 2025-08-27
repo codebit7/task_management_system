@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import TaskCard from './TaskCard';
+import "../Styles/Tasks.css";
 
 
 

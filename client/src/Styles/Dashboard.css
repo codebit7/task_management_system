@@ -1,0 +1,487 @@
+/* ================   Main Dashboard Layout ====================== */
+
+.dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main_content {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+/* ================  Header ====================== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header_left {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.header_right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: clamp(35px, 8vw, 45px);
+  height: clamp(35px, 8vw, 45px);
+  font-weight: bold;
+}
+
+.title {
+  flex: 1;
+}
+
+.welcome-text {
+  margin: 0;
+  font-size: clamp(14px, 2.5vw, 16px);
+  color: #3a3a3a;
+}
+
+.task-count {
+  margin: 0;
+  font-size: clamp(11px, 2vw, 13px);
+  color: #606060;
+}
+
+.add-task-btn {
+  background: #28a745;
+  color: white;
+  padding: 10px 15px;
+  margin: 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: clamp(12px, 2.5vw, 14px);
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.add-task-btn:hover {
+  background: #218838;
+}
+
+.icons {
+  display: flex;
+  padding: 8px;
+  border-radius: 50%;
+  border: #bfbfbf solid 1px;
+  cursor: pointer;
+  font-size: clamp(16px, 3vw, 20px);
+  transition: all 0.3s ease;
+}
+
+.icons:hover {
+  background-color: #f0f0f0;
+  border-color: #28a745;
+  color: #28a745;
+}
+
+/* =================   SIDEBAR  ==================== */
+
+.sidebar {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+}
+
+.sidebar_icons {
+  width: 45px;
+  height: 45px;
+  color: #565656;
+  font-size: clamp(18px, 4vw, 24px);
+}
+
+.sidebar-menu li {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border-radius: 8px;
+  position: relative;
+}
+
+.sidebar-menu li:hover {
+  color: #28a745;
+  background-color: #f0f0f0;
+}
+
+.item_active {
+  color: #28a745;
+  background-color: #e8f5e8;
+}
+
+/* Sidebar labels for mobile */
+.sidebar-label {
+  display: none;
+  font-size: 10px;
+  font-weight: 600;
+  margin-left: 5px;
+  color: inherit;
+}
+
+.sidebar-item-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* =================== Dashboard Panel ===================== */
+
+.dashboard {
+  width: 280px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile {
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s;
+}
+
+.profile:hover {
+  background-color: #e8e8e8;
+}
+
+.p_pic {
+  width: 50px;
+  height: 50px;
+  background-color: #cfcfcf;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.p_pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p_title {
+  font-size: clamp(12px, 2.5vw, 14px);
+  color: #3a3a3a;
+  font-weight: 200;
+  margin: 0;
+}
+
+.p_title span {
+  font-size: clamp(14px, 2.5vw, 16px);
+  color: #3a3a3a;
+  font-weight: 600;
+}
+
+.task_history {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.tasks {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.tasks:hover {
+  transform: translateY(-2px);
+}
+
+.tasks h3 {
+  margin: 0 0 8px 0;
+  font-size: clamp(12px, 2.5vw, 14px);
+  color: #979797;
+  font-weight: 300;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count div {
+  width: 3px;
+  height: 20px;
+  border-radius: 2px;
+}
+
+.dundi1 { background-color: #fad42a; }
+.dundi2 { background-color: #33aa9a; }
+.dundi3 { background-color: #3f0b94; }
+.dundi4 { background-color: #44e45c; }
+
+.count h2 {
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 500;
+  margin: 0;
+}
+
+.task_chart {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.activity-title {
+  font-size: clamp(14px, 2.5vw, 16px);
+  color: #3a3a3a;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.task-chart-container h3 {
+  font-size: clamp(12px, 2.5vw, 13px);
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.task-chart-container h2 {
+  font-size: clamp(18px, 4vw, 22px);
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.task-chart-container p {
+  font-size: clamp(11px, 2vw, 12px);
+  color: gray;
+  margin: 2px 0;
+}
+
+.logoutBtn {
+  background-color: rgb(255, 85, 0);
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: clamp(12px, 2.5vw, 14px);
+  transition: all 0.3s ease;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.logoutBtn:hover {
+  background-color: rgb(230, 70, 0);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 85, 0, 0.3);
+}
+
+/* Focus and accessibility improvements */
+.add-task-btn:focus,
+.logoutBtn:focus {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
+}
+
+.icons:focus,
+.sidebar-menu li:focus {
+  outline: 2px solid #28a745;
+  outline-offset: 2px;
+}
+
+/* Mobile Responsive Design for Dashboard Components */
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .dashboard {
+    width: 250px;
+  }
+}
+
+/* Mobile landscape and small tablet */
+@media (max-width: 768px) {
+  .main_content {
+    flex-direction: column;
+    padding: 0 5px;
+  }
+  
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-menu {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px 0;
+  }
+  
+  .sidebar-menu li {
+    padding: 6px 8px;
+    min-width: 60px;
+  }
+  
+  /* Show labels on mobile */
+  .sidebar-label {
+    display: block;
+    text-align: center;
+  }
+  
+  .sidebar_icons {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+  }
+  
+  .dashboard {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .task_history {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  
+  .task_chart {
+    margin-top: 15px;
+  }
+  
+  .profile {
+    margin-bottom: 15px;
+  }
+  
+  .header {
+    padding: 10px 15px;
+  }
+  
+  .header_left {
+    min-width: auto;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0;
+  }
+  
+  .header {
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .header_left .title {
+    display: none;
+  }
+  
+  .add-task-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .dashboard {
+    padding: 10px;
+  }
+  
+  .task_history {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .profile {
+    padding: 8px;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  
+  .p_pic {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .sidebar-menu {
+    gap: 0;
+  }
+  
+  .sidebar_icons {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 320px) {
+  .header {
+    padding: 8px;
+  }
+  
+  .add-task-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .sidebar_icons {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .dashboard {
+    padding: 8px;
+  }
+}
+
+/* Landscape orientation fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+  .dashboard-container {
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .main_content {
+    height: calc(100vh - 80px);
+    overflow: hidden;
+  }
+}

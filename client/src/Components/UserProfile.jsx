@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import profile from './../assets/profile.png'
 import { myContext } from "./UserContext";
 import { showToast } from "./TaskDashboard";
+import "../Styles/Modal.css";
 
 
 const UserProfile = () => {

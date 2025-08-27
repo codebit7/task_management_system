@@ -4,6 +4,7 @@ import { RxDashboard } from "react-icons/rx";
 import { MdTaskAlt } from "react-icons/md";
 import { LuTimerOff } from "react-icons/lu";
 import { RiProgress1Line } from "react-icons/ri";
+import "../Styles/Dashboard.css";
 
 const Sidebar = ({setStatusFilterOnTask,tasks, setStatusTitle}) => {
 
