@@ -362,7 +362,7 @@
   margin-left: 5px;
 }
 
-/* Animation for task cards */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -374,7 +374,7 @@
   }
 }
 
-/* Loading states */
+
 .loading {
   opacity: 0.6;
   pointer-events: none;
@@ -399,16 +399,16 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Mobile Responsive Design for Task Components */
 
-/* Tablet styles */
+
+/* ================= Responsive Design ================= */
 @media (max-width: 1024px) {
   .task-list {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
 
-/* Mobile landscape and small tablet */
+
 @media (max-width: 768px) {
   .task-list {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -431,7 +431,7 @@
   }
 }
 
-/* Mobile portrait */
+
 @media (max-width: 480px) {
   .task_list_header {
     flex-direction: column;
@@ -475,7 +475,7 @@
   }
 }
 
-/* Extra small mobile */
+
 @media (max-width: 320px) {
   .task-card {
     padding: 10px;
@@ -487,7 +487,7 @@
   }
 }
 
-/* Landscape orientation fixes */
+
 @media (max-height: 500px) and (orientation: landscape) {
   .task-form-container {
     max-height: 90vh;
@@ -499,23 +499,9 @@
   }
 }
 
-/* High resolution displays */
+
 @media (min-width: 1440px) {
   .task-list {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  }
-}
-
-/* Print styles */
-@media print {
-  .add-task,
-  .update_task {
-    display: none !important;
-  }
-  
-  .task-card {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ddd;
   }
 }

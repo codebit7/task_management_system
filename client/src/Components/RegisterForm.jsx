@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash, FaUser, FaEnvelope, FaLock } from "react-icons/fa";
+import { MdElectricBolt,MdOutlineAnalytics } from "react-icons/md";
+import { IoMdRocket } from "react-icons/io";
 import taskLogo from '../assets/taskLogo.png';
 import CustomToast from "./CustomToast";
 import { showToast } from "./TaskDashboard";
@@ -25,7 +27,8 @@ const RegisterForm = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    // Clear error when user starts typing
+   
+
     if (errors[e.target.name]) {
       setErrors({ ...errors, [e.target.name]: "" });
     }
@@ -95,7 +98,7 @@ const RegisterForm = () => {
       showToast(setToast, "Registration successful! Please login to continue.", "success");
       setLoading(false);
       
-      // Clear form
+     
       setFormData({
         name: "",
         email: "",
@@ -103,7 +106,7 @@ const RegisterForm = () => {
         confirmPassword: "",
       });
       
-      // Navigate to login after 2 seconds
+     
       setTimeout(() => {
         navigate("/login");
       }, 2000);
@@ -122,30 +125,30 @@ const RegisterForm = () => {
       
       <div className="auth-container">
         <div className="auth-wrapper">
-          {/* Left Side - Branding */}
+         
           <div className="auth-branding">
             <div className="brand-content">
               <img src={taskLogo} alt="TaskManager" className="brand-logo" />
-              <h2>Join TaskManager</h2>
+              <h2>Join TaskMate</h2>
               <p>Create your account and start organizing your tasks like a pro</p>
               <div className="features-list">
                 <div className="feature-item">
-                  <div className="feature-icon">🚀</div>
+                  <div className="feature-icon"><IoMdRocket/></div>
                   <span>Get started in minutes</span>
                 </div>
                 <div className="feature-item">
-                  <div className="feature-icon">📊</div>
+                  <div className="feature-icon"><MdOutlineAnalytics/></div>
                   <span>Track your productivity</span>
                 </div>
                 <div className="feature-item">
-                  <div className="feature-icon">⚡</div>
+                  <div className="feature-icon"><MdElectricBolt/></div>
                   <span>Boost your efficiency</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Form */}
+          
           <div className="auth-form-section">
             <form className="modern-auth-form" onSubmit={handleSubmit}>
               <div className="form-header">

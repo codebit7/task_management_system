@@ -304,7 +304,6 @@
   outline-offset: 1px;
 }
 
-/* Toast with icon support */
 .toast-icon {
   width: 20px;
   height: 20px;
@@ -320,7 +319,6 @@
   color: #ffffff;
 }
 
-/* Progress bar for auto-dismiss */
 .toast-progress {
   position: absolute;
   bottom: 0;
@@ -340,9 +338,7 @@
   }
 }
 
-/* Mobile Responsive Design for Modal Components */
 
-/* Mobile landscape and small tablet */
 @media (max-width: 768px) {
   .modal {
     padding: 15px;
@@ -380,7 +376,7 @@
   }
 }
 
-/* Mobile portrait */
+
 @media (max-width: 480px) {
   .modal {
     padding: 10px;
@@ -409,7 +405,7 @@
   }
 }
 
-/* Extra small mobile */
+
 @media (max-width: 320px) {
   .modal-content {
     padding: 12px;
@@ -423,39 +419,5 @@
   .toast-container {
     min-width: 240px;
     padding: 10px 12px;
-  }
-}
-
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  .modal-content,
-  .toast-container {
-    animation: none;
-  }
-  
-  .change-password-btn:hover:not(:disabled),
-  .save-btn:hover:not(:disabled) {
-    transform: none;
-  }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .modal-content {
-    border: 2px solid #000;
-  }
-  
-  .form-group input {
-    border-color: #000;
-  }
-  
-  .success {
-    background: #008000;
-    border-color: #004000;
-  }
-  
-  .error {
-    background: #800000;
-    border-color: #400000;
   }
 }

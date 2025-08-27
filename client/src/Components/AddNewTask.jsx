@@ -30,14 +30,24 @@ const AddNewTask = ({ setIsOpen, setTasks, tasks, buttonName, id }) => {
   const [errors, setErrors] = useState({});
   
 
-  useEffect(() => {
-    if (id != null)
-       {
-      setNewTask(tasks.find(task => task._id === id));
-    }
-  }, [id, tasks]);
 
-
+useEffect(() => {
+  if (id != null && buttonName === "Edit Task") {
+    
+    setNewTask(tasks.find(task => task._id === id));
+  } else {
+    
+    setNewTask({
+      user: currentUser.user._id,
+      title: '',
+      description: '',
+      priority: 'Low',
+      date: '',
+      taskCompleted: 'No',
+      status: 'In Progress'
+    });
+  }
+}, [id, buttonName, tasks, currentUser.user._id]);
 
  
     

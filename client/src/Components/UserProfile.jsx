@@ -108,8 +108,8 @@ const UserProfile = () => {
             <p>{currentUser.user.email}</p>
           </div>
           <div className="profile-actions">
-            {/* <button className="github-btn">Github</button> */}
-            <span className="verified-badge">✔ Verified</span>
+           
+            <span className="verified-badge"> Verified</span>
           </div>
         </div>
 

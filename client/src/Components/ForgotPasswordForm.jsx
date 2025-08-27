@@ -17,7 +17,7 @@ const ForgotPasswordForm = () => {
 
   const handleChange = (e) => {
     setEmail(e.target.value);
-    // Clear error when user starts typing
+  
     if (errors.email) {
       setErrors({ ...errors, email: "" });
     }
@@ -148,7 +148,9 @@ const ForgotPasswordForm = () => {
                 {errors.email && <span className="error-message">{errors.email}</span>}
               </div>
 
-              <button className="auth-submit-btn" type="submit" disabled={loading}>
+              <button
+               
+               className="auth-submit-btn" type="submit" disabled={loading}>
                 {loading ? (
                   <div className="button-loading">
                     <span className="spinner"></span>

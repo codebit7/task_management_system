@@ -34,9 +34,7 @@ const Header = ({setIsOpen,setButtonName, taskCount}) => {
       <button className="add-task-btn" onClick={()=>{AddTask()}}>Add a New Task</button>
 
       <div className='header_item_icons'>
-           {/* <div className='icons'>
-                <CiDark/> 
-           </div> */}
+          
 
            <div className='icons'>
                <IoPerson onClick ={()=>setProfileOpen(true)}/>

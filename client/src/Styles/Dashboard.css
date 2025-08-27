@@ -146,7 +146,7 @@
   background-color: #e8f5e8;
 }
 
-/* Sidebar labels for mobile */
+
 .sidebar-label {
   display: none;
   font-size: 10px;
@@ -316,7 +316,7 @@
   box-shadow: 0 4px 8px rgba(255, 85, 0, 0.3);
 }
 
-/* Focus and accessibility improvements */
+
 .add-task-btn:focus,
 .logoutBtn:focus {
   outline: 2px solid #4CAF50;
@@ -329,16 +329,14 @@
   outline-offset: 2px;
 }
 
-/* Mobile Responsive Design for Dashboard Components */
-
-/* Tablet styles */
+/* ================= Responsive Design ================= */
 @media (max-width: 1024px) {
   .dashboard {
     width: 250px;
   }
 }
 
-/* Mobile landscape and small tablet */
+
 @media (max-width: 768px) {
   .main_content {
     flex-direction: column;
@@ -362,7 +360,7 @@
     min-width: 60px;
   }
   
-  /* Show labels on mobile */
+ 
   .sidebar-label {
     display: block;
     text-align: center;
@@ -401,7 +399,7 @@
   }
 }
 
-/* Mobile portrait */
+
 @media (max-width: 480px) {
   .dashboard-container {
     padding: 0;
@@ -452,7 +450,7 @@
   }
 }
 
-/* Extra small mobile */
+
 @media (max-width: 320px) {
   .header {
     padding: 8px;
@@ -473,7 +471,7 @@
   }
 }
 
-/* Landscape orientation fixes */
+
 @media (max-height: 500px) and (orientation: landscape) {
   .dashboard-container {
     height: 100vh;

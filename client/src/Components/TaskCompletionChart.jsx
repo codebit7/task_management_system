@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Legend } from "recharts";
+import "../newapp.css";
 
 const TaskCompletionChart = ({totalTasks, pendingTasks, completedTasks}) => {
     const [animatedData, setAnimatedData] = useState([]);
@@ -50,8 +51,11 @@ const TaskCompletionChart = ({totalTasks, pendingTasks, completedTasks}) => {
         </Pie>
        
       </PieChart>
-      <h2>{totalTasks}</h2>
-        <p>Total Tasks</p>
+         <div className="taskcount">
+          <h2>{totalTasks}</h2>
+           <p>Total Tasks</p>
+         </div>
+        
     </div>
   );
 };

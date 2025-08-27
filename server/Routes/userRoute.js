@@ -4,7 +4,7 @@ const upload = require('../middlewares/upload.js');
 
 const validateEmail = require('../middlewares/validateEmail.js');
 const verifyToken = require('../middlewares/verifyToken.js')
-const {registerUser, loginUser, getAUser,updateProfileImage, updateUser, changePassword} = require('../controllers/userController.js');
+const {registerUser,forgotPassword,resetPassword, loginUser, getAUser,updateProfileImage, updateUser, changePassword} = require('../controllers/userController.js');
 
 
 
@@ -17,6 +17,8 @@ router.route('/').get(validateEmail,verifyToken,getAUser);
 router.route('/me').get(verifyToken,getAUser);
 router.route('/update').patch(verifyToken,updateUser);
 router.route('/change-password').put(verifyToken,changePassword);
+router.post('/forgot-password', forgotPassword);
+router.post('/reset-password/:token', resetPassword);
 
 router.post('/upload', upload.single('profileImage'), updateProfileImage);
 

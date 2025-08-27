@@ -4,6 +4,7 @@ import { myContext } from "./UserContext";
 import CustomToast from "./CustomToast";
 import { showToast } from "./TaskDashboard";
 import { FaEye, FaEyeSlash, FaEnvelope, FaLock } from "react-icons/fa";
+import { MdOutlineDone } from "react-icons/md";
 import taskLogo from '../assets/taskLogo.png';
 import "../Styles/Auth.css";
 
@@ -23,7 +24,7 @@ const LoginForm = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    // Clear error when user starts typing
+    
     if (errors[e.target.name]) {
       setErrors({ ...errors, [e.target.name]: "" });
     }
@@ -98,7 +99,7 @@ const LoginForm = () => {
       
       <div className="auth-container">
         <div className="auth-wrapper">
-          {/* Left Side - Branding */}
+         
           <div className="auth-branding">
             <div className="brand-content">
               <img src={taskLogo} alt="TaskManager" className="brand-logo" />
@@ -106,22 +107,22 @@ const LoginForm = () => {
               <p>Sign in to your account to continue managing your tasks efficiently</p>
               <div className="features-list">
                 <div className="feature-item">
-                  <div className="feature-icon">✓</div>
+                  <div className="feature-icon"><MdOutlineDone/></div>
                   <span>Track your daily tasks</span>
                 </div>
                 <div className="feature-item">
-                  <div className="feature-icon">✓</div>
+                  <div className="feature-icon"><MdOutlineDone/></div>
                   <span>Set priorities & deadlines</span>
                 </div>
                 <div className="feature-item">
-                  <div className="feature-icon">✓</div>
+                  <div className="feature-icon"><MdOutlineDone/></div>
                   <span>Monitor your progress</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Form */}
+      
           <div className="auth-form-section">
             <form className="modern-auth-form" onSubmit={handleSubmit}>
               <div className="form-header">
