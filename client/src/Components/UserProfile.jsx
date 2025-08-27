@@ -24,7 +24,7 @@ const UserProfile = () => {
     }
   
     try {
-      const res = await fetch("http://localhost:3000/api/user/update", {
+      const res = await fetch("https://task-management-system-11q6.vercel.app/api/user/update", {
         method: "PATCH", 
         headers: {
           "Content-Type": "application/json",
@@ -62,7 +62,7 @@ const UserProfile = () => {
       return;
     }
 
-    const res = await fetch("http://localhost:3000/api/user/change-password", {
+    const res = await fetch("https://task-management-system-11q6.vercel.app/api/user/change-password", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

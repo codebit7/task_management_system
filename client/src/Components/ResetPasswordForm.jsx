@@ -16,7 +16,7 @@ const ResetPasswordForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  
+
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [isTokenValid, setIsTokenValid] = useState(null);
@@ -70,7 +70,7 @@ const ResetPasswordForm = () => {
     
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:3000/api/user/reset-password/${token}`, {
+      const res = await fetch(`https://task-management-system-11q6.vercel.app/api/user/reset-password/${token}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

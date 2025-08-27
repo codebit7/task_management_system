@@ -6,7 +6,7 @@ import { showToast } from './TaskDashboard';
 import "../Styles/Tasks.css";
 
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://task-management-system-11q6.vercel.app/';
 const AddNewTask = ({ setIsOpen, setTasks, tasks, buttonName, id }) => {
 
 

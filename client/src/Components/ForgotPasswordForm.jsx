@@ -45,7 +45,7 @@ const ForgotPasswordForm = () => {
     
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/api/user/forgot-password", {
+      const res = await fetch("https://task-management-system-11q6.vercel.app/api/user/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

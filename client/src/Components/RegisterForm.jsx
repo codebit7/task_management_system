@@ -74,7 +74,7 @@ const RegisterForm = () => {
     
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/api/user/register", {
+      const res = await fetch("https://task-management-system-11q6.vercel.app/api/user/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
