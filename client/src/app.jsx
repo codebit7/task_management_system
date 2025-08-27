@@ -6,6 +6,7 @@ import ForgotPasswordForm from './Components/ForgotPasswordForm'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Protect from './Components/protect'
 import ContextProvider, { myContext } from './Components/UserContext'
+import ResetPasswordForm from './Components/ResetPasswordForm'
 
 export function App() {
   
@@ -21,6 +22,7 @@ export function App() {
     <Route path="/login" element={<LoginForm/>} />
     <Route path="/register" element={<RegisterForm />} />
     <Route path="/forgot-password" element={<ForgotPasswordForm />} />
+    <Route path="/reset-password/:token" element={<ResetPasswordForm />} />
 
    
   </Routes>

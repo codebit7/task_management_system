@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { IoClose } from "react-icons/io5";
 import {calculateDaysAgo } from '../Utils/calculateDays'
-import { useNavigate } from 'react-router-dom';
 import { myContext } from './UserContext';
 import { showToast } from './TaskDashboard';
 import "../Styles/Tasks.css";
 
 
 const BASE_URL = 'http://localhost:3000';
-
 const AddNewTask = ({ setIsOpen, setTasks, tasks, buttonName, id }) => {
 
 

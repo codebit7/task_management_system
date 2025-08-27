@@ -100,7 +100,7 @@ const LoginForm = () => {
       <div className="auth-container">
         <div className="auth-wrapper">
          
-          <div className="auth-branding">
+          <div className="auth-branding login-bg">
             <div className="brand-content">
               <img src={taskLogo} alt="TaskManager" className="brand-logo" />
               <h2>Welcome Back</h2>

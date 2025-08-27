@@ -126,7 +126,7 @@ const RegisterForm = () => {
       <div className="auth-container">
         <div className="auth-wrapper">
          
-          <div className="auth-branding">
+          <div className="auth-branding register-bg">
             <div className="brand-content">
               <img src={taskLogo} alt="TaskManager" className="brand-logo" />
               <h2>Join TaskMate</h2>
