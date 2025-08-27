@@ -1,12 +1,12 @@
 import './newapp.css'
-import TaskDashboard from './Components/TaskDashboard'
-import LoginForm from './Components/LoginForm'
-import RegisterForm from './Components/RegisterForm'
-import ForgotPasswordForm from './Components/ForgotPasswordForm'
+import TaskDashboard from './Components/TaskDashboard.jsx'
+import LoginForm from './Components/LoginForm.jsx'
+import RegisterForm from './Components/RegisterForm.jsx'
+import ForgotPasswordForm from './Components/ForgotPasswordForm.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Protect from './Components/protect'
-import ContextProvider, { myContext } from './Components/UserContext'
-import ResetPasswordForm from './Components/ResetPasswordForm'
+import Protect from './Components/protect.jsx'
+import ContextProvider, { myContext } from './Components/UserContext.jsx'
+import ResetPasswordForm from './Components/ResetPasswordForm.jsx'
 
 export function App() {
   
