@@ -14,7 +14,9 @@ const ResetPasswordForm = () => {
   });
   
   const [showPassword, setShowPassword] = useState(false);
+
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [isTokenValid, setIsTokenValid] = useState(null);
