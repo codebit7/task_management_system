@@ -171,7 +171,7 @@ const forgotPassword = async (req, res) => {
         user.resetPasswordExpire = Date.now() + 15 * 60 * 1000; 
         await user.save();
 
-        const resetUrl = `${process.env.BASE_URL}/api/user/reset-password/${resetToken}`;
+        const resetUrl = `${process.env.BASE_URL}/reset-password/${resetToken}`;
 
         const message = `
             <h2>Password Reset Request</h2>
