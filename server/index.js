@@ -10,10 +10,7 @@ const app = express();
 dotenv.config();
 
 app.use(express.json());
-app.use( cors({
-    origin: "*",  
-    credentials: true,
-  }))
+app.use( cors())
 
 app.use(express.json());
 app.use(cookieParser());
@@ -26,7 +23,7 @@ MongoDb()
 .then(()=>{
     const PORT = process.env.PORT || 3000
     app.get('/',(req, res)=>{
-          res.json(`Server is running on port ${PORT}`);
+         return res.status(200).json({ message: "HI I'm available" });
     })
     app.listen(PORT, ()=>{
         console.log(`Server is running on port ${PORT}`);
