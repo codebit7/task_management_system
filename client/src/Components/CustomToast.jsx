@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/Modal.css";
+import "../Styles/modal.css";
 
 const CustomToast = ({ message, type, onClose }) => {
   return (
