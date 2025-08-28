@@ -33,58 +33,49 @@ const TaskDashboard = () => {
   const { currentUser, profileOpen, toast, setToast } = useContext(myContext);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchTasks = async () => {
-      if (!currentUser || !currentUser.token) {
-        navigate('/login');
-        return;
-      }
-
-      setIsLoading(true);
-      
-      try {
-        const response = await fetch(`${BASE_URL}/api/tasks`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${currentUser.token}` 
-          }
-        });
-
-        if (!response.ok) {
-          if (response.status === 401) {
-            navigate('/login');
-            return;
-          }
-          throw new Error(`HTTP error! status: ${response.status}`);
+  const fetchTasks = async () => {
+    if (!currentUser || !currentUser.token) {
+      navigate('/login');
+      return;
+    }
+    setIsLoading(true);
+    try {
+      const response = await fetch(`${BASE_URL}/api/tasks`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${currentUser.token}` 
         }
-
-        let data = await response.json();
-        
-        if (!Array.isArray(data)) {
-          console.warn("Expected array but got:", typeof data);
-          setTasks([]);
-          setStatusFilterOnTask([]);
+      });
+      if (!response.ok) {
+        if (response.status === 401) {
+          navigate('/login');
           return;
         }
-
-        console.log("MY TASKS", data);
-        setTasks(data);
-        setStatusFilterOnTask(data);
-        
-      } catch (error) {
-        console.error("Error fetching tasks:", error);
-        showToast(setToast, "Error fetching tasks. Please try again.", "error");
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      let data = await response.json();
+      if (!Array.isArray(data)) {
+        console.warn("Expected array but got:", typeof data);
         setTasks([]);
         setStatusFilterOnTask([]);
-      } finally {
-       
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 800);
+        return;
       }
-    };
+      setTasks(data);
+      setStatusFilterOnTask(data);
+    } catch (error) {
+      console.error("Error fetching tasks:", error);
+      showToast(setToast, "Error fetching tasks. Please try again.", "error");
+      setTasks([]);
+      setStatusFilterOnTask([]);
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 800);
+    }
+  };
 
+  useEffect(() => {
     fetchTasks();
   }, [currentUser, navigate]);
 
@@ -134,11 +125,12 @@ const TaskDashboard = () => {
       {isOpen && (
         <AddNewTask
           setIsOpen={setIsOpen}
-           setTasks={setTasks}
+          setTasks={setTasks}
           buttonName={buttonName}
           id={id}
           tasks={tasks}
           userId={currentUser.user.id}
+          fetchTasks={fetchTasks}
         />
       )}
 

@@ -7,7 +7,7 @@ import "../Styles/Tasks.css";
 
 
 const BASE_URL = 'https://task-management-system-11q6.vercel.app';
-const AddNewTask = ({ setIsOpen, setTasks, tasks, buttonName, id }) => {
+const AddNewTask = ({ setIsOpen, setTasks, tasks, buttonName, id, fetchTasks }) => {
 
 
   const {setToast, currentUser} = useContext(myContext)
@@ -104,28 +104,11 @@ useEffect(() => {
 
     const data = await response.json();
     
-    if (buttonName === "Edit Task") {
-      setTasks(tasks.map(task => (task._id === id ? data : task)));
-      showToast(setToast,"Task updated successfully", "success");
-    } else {
-      setTasks([...tasks, data]);
-      showToast(setToast,"Task added successfully", "success");
+    showToast(setToast, buttonName === "Edit Task" ? "Task updated successfully" : "Task added successfully", "success");
+    setIsOpen(false);
+    if (fetchTasks) {
+      fetchTasks();
     }
-
-    
-    setIsOpen(false);
-
-    const updatedTasksRes = await fetch(`${BASE_URL}/api/tasks`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${currentUser.token}`
-      }
-    });
-  
-    const updatedTasks = await updatedTasksRes.json();
-    setTasks(updatedTasks);
-    setIsOpen(false);
   };
 
   return (
