@@ -70,6 +70,17 @@ const TaskCard = ({ setIsOpen ,setButtonName,setTasks, setId,task}) => {
 const CompleteTask = async () => {
 
     
+   
+    const taskDate = new Date(task.date);
+    const currentDate = new Date();
+    let status;
+    if (task.taskCompleted === 'Yes') {
+      status = 'Completed';
+    } else if (currentDate > taskDate) {
+      status = 'Overdue';
+    } else {
+      status = 'In Progress';
+    }
     const mytask = {
         _id: task._id,
         user: task.user,
@@ -78,11 +89,7 @@ const CompleteTask = async () => {
         date: task.date,
         priority: task.priority,
         taskCompleted: task.taskCompleted === 'Yes' ? 'No': 'Yes',
-        status: task.status === 'Completed' ? 
-       (calculateDaysAgo(task.date).includes('days ago') || calculateDaysAgo(task.date).includes('Yesterday'))
-        ? "Overdue"
-        : "In Progress"
-         : 'Completed',
+        status,
     };
 
 

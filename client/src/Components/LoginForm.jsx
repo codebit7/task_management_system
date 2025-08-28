@@ -11,6 +11,7 @@ import "../Styles/Auth.css";
 const LoginForm = () => {
 
  const {setCurrentUser,setIsLogin, setToast,toast} =  useContext(myContext);
+ 
  const [showPassword, setShowPassword] = useState(false);
 
   const [formData, setFormData] = useState({
