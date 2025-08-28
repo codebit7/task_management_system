@@ -1,3 +1,11 @@
+
+:focus-visible {
+  caret-color: transparent;
+}
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  caret-color: auto;
+}
+
 /* ============== Base Styles ===================== */
 
 * {
