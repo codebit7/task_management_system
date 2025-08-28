@@ -51,7 +51,10 @@ const TaskDashboard = () => {
         });
 
         let data = await response.json();
-        
+        if (!Array.isArray(data)) {
+          setTasks([]);
+          return;
+        }
         const currentDate = new Date();
         data = data.map(task => {
           if (task.taskCompleted === 'No' && currentDate > new Date(task.date)) {
