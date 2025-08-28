@@ -4,7 +4,18 @@ const Task = require('../models/TaskModel');
 const getTasks = async (req, res) => {
     try {
         const userId = req.user.id;
-        const tasks = await Task.find({ user: userId });
+        let tasks = await Task.find({ user: userId });
+        const currentDate = new Date();
+        
+        tasks = await Promise.all(tasks.map(async (task) => {
+            if (task.taskCompleted === 'No' && currentDate > task.date) {
+                if (task.status !== 'Overdue') {
+                    task.status = 'Overdue';
+                    await task.save();
+                }
+            }
+            return task;
+        }));
         res.status(200).json(tasks);
     } catch (error) {
         console.error(error);

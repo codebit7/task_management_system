@@ -50,8 +50,15 @@ const TaskDashboard = () => {
           }
         });
 
-      
-        const data = await response.json();
+        let data = await response.json();
+        
+        const currentDate = new Date();
+        data = data.map(task => {
+          if (task.taskCompleted === 'No' && currentDate > new Date(task.date)) {
+            return { ...task, status: 'Overdue' };
+          }
+          return task;
+        });
         setTasks(data);
       } catch (error) {
         console.error("Error fetching tasks:", error);
