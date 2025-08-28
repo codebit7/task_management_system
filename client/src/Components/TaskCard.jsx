@@ -71,6 +71,7 @@ const CompleteTask = async () => {
 
     
    
+     
     // const taskDate = new Date(task.date);
     // const currentDate = new Date();
     // let status;
@@ -133,8 +134,8 @@ const CompleteTask = async () => {
        <div className={`${task.status ==='Completed'? "task_complete": "not_complete"}`}  
        onClick={CompleteTask}
        title='Click to Complete'
-       >
-          <SiGoogletasks className='complete_icon' />
+       >   
+          <SiGoogletasks className={`complete_icon${task.status === 'Completed' ? ' complete_icon--green' : ''}`} />
         </div>  
     </div>
        <p className="task-desc">{task.description}</p>

@@ -125,10 +125,14 @@
   flex: 1;
 }
 
-.complete_icon {
+ .complete_icon {
   height: 18px;
   width: 18px;
   transition: all 0.3s ease;
+}
+
+.complete_icon--green {
+  color: #147414;
 }
 
 .complete_icon:hover {
@@ -451,6 +455,12 @@
   
   .task-card {
     padding: 12px;
+     pointer-events: none;
+    }
+    .complete_icon,
+    .edit_task,
+    .delete_task {
+      pointer-events: auto;
   }
   
   .task_card_footer {
