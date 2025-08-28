@@ -269,6 +269,12 @@
   z-index: 1000;
   max-height: 90vh;
   overflow-y: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.task-form-container::-webkit-scrollbar {
+  display: none; 
 }
 
 .task-form-container h2 {
@@ -296,7 +302,7 @@
 .form select {
   padding: 12px;
   font-size: clamp(12px, 2.5vw, 14px);
-  border: 2px solid #e1e5e9;
+  border: 1px solid #e1e5e9;
   border-radius: 8px;
   background-color: #f8f9fa;
   transition: all 0.3s ease;
@@ -308,7 +314,7 @@
   outline: none;
   border-color: #4CAF50;
   background: white;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+
 }
 
 .close-icon {
@@ -347,13 +353,9 @@
 
 .update-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
 }
 
-.update-btn:focus {
-  outline: 2px solid #4CAF50;
-  outline-offset: 2px;
-}
+
 
 .error {
   margin: 5px 0;

@@ -24,7 +24,13 @@
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
   max-height: 90vh;
   overflow-y: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
   animation: modalFadeIn 0.3s ease-out;
+}
+
+task-form-container::-webkit-scrollbar {
+  display: none; 
 }
 
 @keyframes modalFadeIn {
@@ -82,9 +88,9 @@
 }
 
 .verified-badge {
-  color: green;
+  color: #119611;
   font-weight: bold;
-  font-size: clamp(12px, 2.5vw, 14px);
+  font-size: clamp(10px, 2.3vw, 13px);
   background: rgba(40, 167, 69, 0.1);
   padding: 4px 8px;
   border-radius: 12px;
@@ -108,7 +114,7 @@
 
 .form-group input {
   padding: 12px;
-  border: 2px solid #e1e5e9;
+  border: 1px solid #e1e5e9;
   border-radius: 8px;
   font-size: clamp(12px, 2.5vw, 14px);
   transition: all 0.3s ease;
@@ -185,7 +191,7 @@
 .cancel-btn {
   background: #f3f4f6;
   color: #374151;
-  border: 2px solid #e5e7eb;
+  border: 1px solid #e5e7eb;
 }
 
 .cancel-btn:hover {
