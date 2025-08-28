@@ -31,8 +31,8 @@ const TaskDashboard = () => {
   const navigate = useNavigate();
 
 
-  console.log("ProfileOpen: ", profileOpen);
-  
+ 
+
   useEffect(() => {
     const fetchTasks = async () => {
       if(!currentUser)
@@ -55,6 +55,7 @@ const TaskDashboard = () => {
           setTasks([]);
           return;
         }
+
         const currentDate = new Date();
         data = data.map(task => {
           if (task.taskCompleted === 'No' && currentDate > new Date(task.date)) {
