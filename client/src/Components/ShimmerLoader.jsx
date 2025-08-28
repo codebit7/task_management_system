@@ -4,21 +4,27 @@ import '../Styles/Shimmer.css';
 export const TaskCardSkeleton = () => {
   return (
     <div className="task-card-skeleton">
+
       <div className="shimmer-wrapper">
+
         <div className="task-header-skeleton">
-          <div className="task-title-skeleton">
-            <div className="shimmer-line title-line"></div>
+        <div className="task-title-skeleton">
+             <div className="shimmer-line title-line"></div>
             <div className="shimmer-circle"></div>
           </div>
           <div className="task-desc-skeleton">
-            <div className="shimmer-line desc-line-1"></div>
-            <div className="shimmer-line desc-line-2"></div>
-            <div className="shimmer-line desc-line-3"></div>
+
+              <div className="shimmer-line desc-line-1"></div>
+              <div className="shimmer-line desc-line-2"></div>
+              <div className="shimmer-line desc-line-3"></div>
           </div>
         </div>
+        
         <div className="task-footer-skeleton">
-          <div className="shimmer-line date-line"></div>
+          
+           <div className="shimmer-line date-line"></div>
           <div className="shimmer-pill priority-pill"></div>
+          
           <div className="icons-skeleton">
             <div className="shimmer-circle small"></div>
             <div className="shimmer-circle small"></div>
@@ -57,23 +63,7 @@ export const TaskListSkeleton = () => {
   );
 };
 
-export const SidebarSkeleton = () => {
-  return (
-    <div className="sidebar-skeleton">
-      <div className="sidebar-header-skeleton">
-        <div className="shimmer-line sidebar-title"></div>
-      </div>
-      <div className="sidebar-stats-skeleton">
-        {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="stat-item-skeleton">
-            <div className="shimmer-line stat-label"></div>
-            <div className="shimmer-circle stat-count"></div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+
 
 export const DashboardSkeleton = () => {
   return (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TaskCard from './TaskCard';
 import { TaskListSkeleton } from './ShimmerLoader';
+
 import "../Styles/Tasks.css";
 import "../Styles/Shimmer.css";
 
@@ -8,12 +9,16 @@ const TaskList = ({ setIsOpen, setButtonName, setTasks, tasks, setId, statusTitl
 
   const filters = ['All', 'Low', 'Medium', 'High'];
   const [filter, setFilter] = useState('All');
+
   const [filteredTasks, setFilteredTasks] = useState(tasks);
 
   useEffect(() => {
-    if (filter === 'All') {
+    if (filter === 'All') 
+      {
       setFilteredTasks(tasks);
-    } else {
+    } 
+    else
+       {
       setFilteredTasks(tasks.filter(task => task.priority.toLowerCase() === filter.toLowerCase()));
     }
   }, [filter, tasks]);
@@ -23,8 +28,9 @@ const TaskList = ({ setIsOpen, setButtonName, setTasks, tasks, setId, statusTitl
     setButtonName("Create new Task");
   }
 
-  // Show shimmer loading while data is being fetched
-  if (isLoading) {
+ 
+  if (isLoading) 
+    {
     return <TaskListSkeleton />;
   }
 
@@ -35,9 +41,9 @@ const TaskList = ({ setIsOpen, setButtonName, setTasks, tasks, setId, statusTitl
         <div className="task_filters">
           <ul>
             {filters.map((f) => (
-              <li key={f} onClick={() => setFilter(f)} 
-                className={filter === f ? 'active' : ''}>
-                {f}
+             <li key={f} onClick={() => setFilter(f)} 
+                   className={filter === f ? 'active' : ''}>
+                  {f}
               </li>
             ))}
           </ul>
@@ -45,19 +51,22 @@ const TaskList = ({ setIsOpen, setButtonName, setTasks, tasks, setId, statusTitl
       </div>
    
       <div className="task-list">
+
         {filteredTasks.length > 0 ? (
-          filteredTasks.map((task) => (
-            <TaskCard
+            filteredTasks.map((task) => (
+             
+             <TaskCard
               key={task._id}
               setIsOpen={setIsOpen} 
               setButtonName={setButtonName}
               setTasks={setTasks}
               setId={setId}
               task={task}
+
             />
           ))
         ) : (
-          <div className="no-tasks-message">
+         <div className="no-tasks-message">
             <p>No tasks found for the selected filter.</p>
           </div>
         )}

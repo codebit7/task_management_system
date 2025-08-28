@@ -8,7 +8,7 @@ import AddNewTask from "./AddNewTask";
 import { myContext } from "./UserContext";
 import UserProfile from "./UserProfile";
 import CustomToast from "./CustomToast";
-import { SidebarSkeleton, DashboardSkeleton } from "./ShimmerLoader";
+import { DashboardSkeleton } from "./ShimmerLoader";
 
 const BASE_URL = "https://task-management-system-11q6.vercel.app";
 
@@ -21,8 +21,12 @@ const TaskDashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [buttonName, setButtonName] = useState("Create new Task");
   const [id, setId] = useState(null);
+
   const [tasks, setTasks] = useState([]);
+
+
   const [statusTitle, setStatusTitle] = useState("All");
+
   const [statusFilterOnTask, setStatusFilterOnTask] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -89,29 +93,31 @@ const TaskDashboard = () => {
       {toast && <CustomToast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
   
       <Header
-        setIsOpen={setIsOpen}
+
+         setIsOpen={setIsOpen}
         setButtonName={setButtonName}
         taskCount={isLoading ? 0 : tasks.filter((task) => task.status !== "Completed").length}
         isLoading={isLoading}
       />
 
       <div className="main_content">
-        {isLoading ? (
-          <SidebarSkeleton />
-        ) : (
+      
           <Sidebar
+
             setStatusFilterOnTask={setStatusFilterOnTask}
-            tasks={tasks}
+             tasks={tasks}
             setStatusTitle={setStatusTitle}
           />
-        )}
+       
 
         <div className="task-container">
           <TaskList
+
             setIsOpen={setIsOpen}
             setButtonName={setButtonName}
-            tasks={statusFilterOnTask}
+             tasks={statusFilterOnTask}
             setTasks={setTasks}
+            
             setId={setId}
             statusTitle={statusTitle}
             isLoading={isLoading}
@@ -128,7 +134,7 @@ const TaskDashboard = () => {
       {isOpen && (
         <AddNewTask
           setIsOpen={setIsOpen}
-          setTasks={setTasks}
+           setTasks={setTasks}
           buttonName={buttonName}
           id={id}
           tasks={tasks}
