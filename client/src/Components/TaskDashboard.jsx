@@ -33,16 +33,15 @@ const TaskDashboard = () => {
 
  
 
-  useEffect(() => {
+ useEffect(() => {
     const fetchTasks = async () => {
-      if(!currentUser)
-      {
+      if (!currentUser || !currentUser.token) {
         navigate('/login');
-        return
+        return;
       }
 
       try {
-        const response = await fetch(`${BASE_URL}/api/tasks`,{
+        const response = await fetch(`${BASE_URL}/api/tasks`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -50,28 +49,34 @@ const TaskDashboard = () => {
           }
         });
 
+        if (!response.ok) {
+          if (response.status === 401) {
+            navigate('/login');
+            return;
+          }
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         let data = await response.json();
+        
         if (!Array.isArray(data)) {
+          console.warn("Expected array but got:", typeof data);
           setTasks([]);
           return;
         }
 
-        const currentDate = new Date();
-        data = data.map(task => {
-          if (task.taskCompleted === 'No' && currentDate > new Date(task.date)) {
-            return { ...task, status: 'Overdue' };
-          }
-          return task;
-        });
+        
         setTasks(data);
+        
       } catch (error) {
         console.error("Error fetching tasks:", error);
+        showToast(setToast, "Error fetching tasks. Please try again.", "error");
+        setTasks([]);
       }
     };
 
     fetchTasks();
-  }, []);
-
+  }, [currentUser, navigate]);
 
   
 
