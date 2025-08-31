@@ -23,6 +23,7 @@ const RegisterForm = () => {
   const [errors, setErrors] = useState({});
   
   const { setToast, toast } = useContext(myContext);
+  
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -37,27 +38,36 @@ const RegisterForm = () => {
   const validateForm = () => {
     const newErrors = {};
     
-    if (!formData.name) {
+    if (!formData.name)
+       {
       newErrors.name = "Full name is required";
-    } else if (formData.name.length < 2) {
+    }
+     else if (formData.name.length < 2) {
       newErrors.name = "Name must be at least 2 characters";
     }
     
-    if (!formData.email) {
+    if (!formData.email)
+       {
       newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } 
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Email is invalid";
     }
     
-    if (!formData.password) {
+    if (!formData.password)
+       {
       newErrors.password = "Password is required";
-    } else if (formData.password.length < 6) {
+    } 
+    else if (formData.password.length < 6) {
       newErrors.password = "Password must be at least 6 characters";
     }
     
-    if (!formData.confirmPassword) {
+    if (!formData.confirmPassword)
+       {
       newErrors.confirmPassword = "Please confirm your password";
-    } else if (formData.password !== formData.confirmPassword) {
+    } 
+    else if (formData.password !== formData.confirmPassword)
+       {
       newErrors.confirmPassword = "Passwords do not match";
     }
     
