@@ -8,8 +8,10 @@ export const TaskCardSkeleton = () => {
       <div className="shimmer-wrapper">
 
         <div className="task-header-skeleton">
+
         <div className="task-title-skeleton">
-             <div className="shimmer-line title-line"></div>
+             <div className="shimmer-line title-line">
+             </div>
             <div className="shimmer-circle"></div>
           </div>
           <div className="task-desc-skeleton">
