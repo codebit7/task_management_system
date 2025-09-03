@@ -12,7 +12,7 @@ const Dashboard = ({ tasks}) => {
 
   const inProgress = tasks.filter(task => task.status === 'In Progress').length;
 
-  const overDue = tasks.filter(task => task.status === 'Overdue').length;
+   const overDue = tasks.filter( task =>  task.status ===  'Overdue').length;
   const completed= tasks.filter(task => task.status === 'Completed').length;
   
   const navigate = useNavigate()
@@ -45,7 +45,7 @@ const Dashboard = ({ tasks}) => {
 
       <div className='profile' onClick={handleProfile}>
         <div className='p_pic'>
-          <img src={profile} alt="" />
+           <img src={profile} alt="" />
         </div>
         <h3 className='p_title'>Hello,<br /><span>{currentUser?.user?.name}</span></h3>
       </div>
