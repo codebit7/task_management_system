@@ -21,6 +21,7 @@ const ResetPasswordForm = () => {
   const [errors, setErrors] = useState({});
   const [isTokenValid, setIsTokenValid] = useState(null);
   const [isSuccess, setIsSuccess] = useState(false);
+
   
   const { setToast, toast } = useContext(myContext);
   const navigate = useNavigate();
@@ -70,8 +71,10 @@ const ResetPasswordForm = () => {
     
     setLoading(true);
     try {
+
       const res = await fetch(`https://task-management-system-11q6.vercel.app/api/user/reset-password/${token}`, {
         method: "POST",
+
         headers: {
           "Content-Type": "application/json",
         },
@@ -121,9 +124,10 @@ const ResetPasswordForm = () => {
               <div className="success-message">
                 <div className="success-icon">
                   <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-                    <circle cx="32" cy="32" r="32" fill="#ef4444" opacity="0.1"/>
-                    <circle cx="32" cy="32" r="24" fill="#ef4444" opacity="0.2"/>
-                    <path d="M24 24L40 40M40 24L24 40" stroke="#ef4444" strokeWidth="3" strokeLinecap="round"/>
+                     
+                     <circle cx="32" cy="32" r="32" fill="#ef4444" opacity="0.1"/>
+                     <circle cx="32" cy="32" r="24" fill="#ef4444" opacity="0.2"/>
+                   <path d="M24 24L40 40M40 24L24 40" stroke="#ef4444" strokeWidth="3" strokeLinecap="round"/>
                   </svg>
                 </div>
                 <h2>Invalid Reset Link</h2>
@@ -170,6 +174,7 @@ const ResetPasswordForm = () => {
                   You will be redirected to the login page in a few seconds.
                 </p>
                 
+               
                 <div className="action-buttons">
                   <Link to="/login" className="auth-submit-btn">
                     <FaArrowLeft /> Continue to Sign In
