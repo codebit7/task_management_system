@@ -6,13 +6,13 @@ import "../Styles/modal.css";
 
 
 const UserProfile = () => {
+
+
+
   const {setProfileOpen,currentUser, setCurrentUser,setToast} = useContext(myContext);
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [name, setName] = useState(currentUser?.user?.name ||"");
-
-
-  
 
 
 
@@ -25,6 +25,7 @@ const UserProfile = () => {
   
     try {
       const res = await fetch("https://task-management-system-11q6.vercel.app/api/user/update", {
+
         method: "PATCH", 
         headers: {
           "Content-Type": "application/json",
@@ -41,8 +42,10 @@ const UserProfile = () => {
       }
   
       showToast(setToast,"Profile Updated Successfully", "success");
+
   
       setProfileOpen(false);
+
       setCurrentUser({ ...currentUser, user: data.user });
   
     } catch (error) {
@@ -65,15 +68,18 @@ const UserProfile = () => {
     const res = await fetch("https://task-management-system-11q6.vercel.app/api/user/change-password", {
       method: "PUT",
       headers: {
+
         "Content-Type": "application/json",
         Authorization: `Bearer ${currentUser.token}`,
+
       },
-      body: JSON.stringify({id:currentUser.user._id, oldPassword, newPassword }),
+      body: JSON.stringify({ id:currentUser.user._id, oldPassword, newPassword }),
     });
 
 
     if(res.status === 200)
     {
+
      showToast(setToast,"Password Changed Successfully", "success");
       setOldPassword("");
       setNewPassword("");
@@ -96,6 +102,7 @@ const UserProfile = () => {
 
 
   return (
+    
     <div className="modal">
       <div className="modal-content">
         <div className="profile-header">
@@ -147,15 +154,19 @@ const UserProfile = () => {
           </div>
         </div>
 
-        <button className="change-password-btn" onClick={handleChangePassword}>
+        <button className="change-password-btn"
+         onClick={handleChangePassword}>
           Change Password
         </button>
 
         <div className="modal-actions">
-          <button className="cancel-btn" onClick={()=>setProfileOpen(false)}>Cancel</button>
+          <button className="cancel-btn" onClick={()=>setProfileOpen(false)}>
+            Cancel
+          </button>
           <button className="save-btn" onClick={handleSaveChanges}>
             Save Changes
           </button>
+
         </div>
       </div>
     </div>
