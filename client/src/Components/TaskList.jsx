@@ -40,6 +40,7 @@ const TaskList = ({ setIsOpen, setButtonName, setTasks, tasks, setId, statusTitl
         <h1>{`${statusTitle} Tasks`}</h1>
         <div className="task_filters">
           <ul>
+            
             {filters.map((f) => (
              <li key={f} onClick={() => setFilter(f)} 
                    className={filter === f ? 'active' : ''}>

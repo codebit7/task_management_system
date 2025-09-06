@@ -15,12 +15,14 @@ const ContextProvider = ({ children }) => {
     const [isLogin, setIsLogin] = useState(storedLoginStatus);
     const [profileOpen, setProfileOpen] = useState();
     const [toast, setToast] = useState(null);
+
   
    
     useEffect(() => {
       localStorage.setItem("user", JSON.stringify(currentUser));
       localStorage.setItem("isLogin", JSON.stringify(isLogin));
 
+      
     }, [currentUser, isLogin]);
 
 
